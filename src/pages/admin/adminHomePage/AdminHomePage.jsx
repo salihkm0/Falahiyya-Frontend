@@ -4,6 +4,10 @@ import {
   AttendanceChartContainer,
   AttendanceChartHeading,
   AttendanceChartWrapper,
+  QuickDetailsCard,
+  QuickDetailsCount,
+  QuickDetailsTitle,
+  QuickDetailsWrapper,
 } from "../../../styles/AdminHomePageStyle";
 import {
   AttendancePieChartInMonth,
@@ -14,13 +18,33 @@ export const AdminHomePage = () => {
   return (
     <>
       <AdminHomePageHeadding>
-        Welcome to the Falahiyya admin home page!
+        Falahiyya Admin Dashboard
       </AdminHomePageHeadding>
 
+      {/* ------------------Total Details------------------------ */}
 
-{/* ------------------Attendance Details Dashboard------------------------ */}
+      <QuickDetailsWrapper>
+        <QuickDetailsCard bgColor={"red"}>
+          <QuickDetailsTitle>Total Classes</QuickDetailsTitle>
+          <QuickDetailsCount>06</QuickDetailsCount>
+        </QuickDetailsCard>
+        <QuickDetailsCard bgColor={"green"}>
+          <QuickDetailsTitle>Total Teachers</QuickDetailsTitle>
+          <QuickDetailsCount>03</QuickDetailsCount>
+        </QuickDetailsCard>
+        <QuickDetailsCard bgColor={"blue"}>
+          <QuickDetailsTitle>Total Students</QuickDetailsTitle>
+          <QuickDetailsCount>65</QuickDetailsCount>
+        </QuickDetailsCard>
+        <QuickDetailsCard bgColor={"orenge"}>
+          <QuickDetailsTitle>Total Parents</QuickDetailsTitle>
+          <QuickDetailsCount>51</QuickDetailsCount>
+        </QuickDetailsCard>
+      </QuickDetailsWrapper>
 
-      {/* <AttendanceChartWrapper>
+      {/* ------------------Attendance Details Dashboard------------------------ */}
+
+      <AttendanceChartWrapper>
         <AttendanceChartContainer>
           <AttendanceChartHeading>
             Student Total Attendance Chart in Month(Days)
@@ -33,7 +57,7 @@ export const AdminHomePage = () => {
           </AttendanceChartHeading>
           <AttendancePieChartInYear />
         </AttendanceChartContainer>
-      </AttendanceChartWrapper> */}
+      </AttendanceChartWrapper>
     </>
   );
 };
