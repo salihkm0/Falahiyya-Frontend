@@ -15,6 +15,10 @@ import { ViewAttendance } from "./studentRelated/ViewAttendance";
 import { ParentsList } from "./parentRelated/ParentsList";
 import { ClassList } from "./classRelated/ClassesList";
 import { SubjectList } from "./classRelated/SubjectList";
+import { Exams } from "./studentRelated/Exams";
+import { EventsList } from "../teacher/eventsRelated/EventsList";
+import { ResultsList } from "./studentRelated/ResultsList";
+import { TeacherAttendanceList } from "./teacherRelated/TeacherAttendanceList";
 export const AdminDashboard = () => {
   return (
     <>
@@ -30,8 +34,9 @@ export const AdminDashboard = () => {
           
 
           {/* Teacher Related Pages */}
-          <Route path="/admin/add-teacher" element={<TeacherAddForm />} />
-          <Route path="/admin/veiw-teacher" element={<TeachersList />} />
+          <Route path="/admin/teacher/add" element={<TeacherAddForm />} />
+          <Route path="/admin/techer/list" element={<TeachersList />} />
+          <Route path="/admin/teacher/attendace" element={<TeacherAttendanceList />} />
 
           {/* Class Related Pages  */}
           <Route path="/admin/add-class" element={<ClassAddForm />} />
@@ -43,6 +48,9 @@ export const AdminDashboard = () => {
           <Route path="admin/stud-attendance/add" element={<AddAttendance />} />
           <Route path="admin/stud-attendance/view" element={<ViewAttendance />} />
           <Route path="/admin/parents-list" element={<ParentsList />} />
+          <Route path="/admin/student/exams" element={<Exams />} />
+          <Route path="/admin/student/results" element={<ResultsList/>} />
+          <Route path="/admin/student/events" element={<EventsList />} />
         </Routes>
       </MainContainer>
     </>

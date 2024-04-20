@@ -11,6 +11,7 @@ import {
   AddFormCloseBtn,
 } from "../../../styles/AddFormStyle.jsx";
 import { AddBtn } from "../../../styles/UserListStyle.jsx";
+import Select from "react-select";
 
 export const TeacherAddForm = () => {
   const [newTeacherData, setNewTeacherData] = useState("");
@@ -23,6 +24,24 @@ export const TeacherAddForm = () => {
   // Handles input changes for new admin data
 
   console.log(newTeacherData);
+
+  const options = [
+    { value: "1", label: "01" },
+    { value: "2", label: "02" },
+    { value: "3", label: "03" },
+    { value: "4", label: "04" },
+    { value: "5", label: "05" },
+    { value: "6", label: "06" },
+  ];
+
+
+  const handleSelect =(e) => {
+    let classes = []
+    e.map((item)=>classes.push(...item.value))
+    console.log(classes);
+  }
+
+
   return (
     <Popup trigger={<AddBtn>Add Teacher</AddBtn>} modal nested>
       {(close) => (
@@ -73,18 +92,18 @@ export const TeacherAddForm = () => {
               />
               <br />
               <label for="phone">Class :</label>
-              <select
-                name="class"
-                id=""
-                {...register("class", { required: true })}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-              </select>
+              <Select
+                options={options}
+                isMulti
+                name="classes"
+                className="basic-multi-select"
+                classNamePrefix="select"
+                onChange={handleSelect}
+              />
+              <br/>
+              <label for="phone">isHead :</label>
+              <input type="checkbox" {...register("isHead")}/>
+              <br/>
               <label for="password">Password:</label>
               <input
                 type="text"

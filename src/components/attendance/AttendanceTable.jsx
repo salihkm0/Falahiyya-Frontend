@@ -21,7 +21,9 @@ export const AttendanceTable = ({ data }) => {
               <AttendanceTableHead>Roll No.</AttendanceTableHead>
               <AttendanceTableHead>Admission No.</AttendanceTableHead>
               <AttendanceTableHead>Student Name</AttendanceTableHead>
-              <AttendanceTableHead>{data.date}</AttendanceTableHead>
+              {/* <AttendanceTableHead>{data.date}</AttendanceTableHead> */}
+              <AttendanceTableHead>Status</AttendanceTableHead>
+              <AttendanceTableHead>Time</AttendanceTableHead>
             </AttendanceTableRow>
             {studData.map((student, index) => (
               <AttendanceTableRow key={index}>

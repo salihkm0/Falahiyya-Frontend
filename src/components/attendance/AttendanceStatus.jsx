@@ -7,12 +7,22 @@ import {
 export const AttendanceStatus = () => {
   const [attendanceStatus, setAttendanceStatus] = useState("");
   const [statusDisplay, setStatusDisplay] = useState('');
+  const [presentTime, setPresentTime] = useState('')
 
   const handleAttendance = (e) => {
     let status = e.target.value;
     setAttendanceStatus(status);
     setStatusDisplay(status);
+    // Get present time for marking attendance
+    var today = new Date();
+    var hh = today.getHours() > 12 ? today.getHours() - 12 : today.getHours();
+    var mm = today.getMinutes();
+    var ss = today.getSeconds();
+    var time = hh + ':' + mm + ':' + ss;
+      setPresentTime(time);
   };
+
+  console.log(attendanceStatus + ' ' + presentTime);
 
   return (
     <>
@@ -28,6 +38,13 @@ export const AttendanceStatus = () => {
           <option value="0">Holiday</option>
         </StatusButton>
       </AttendanceStatusBtn>
+      <AttendanceStatusBtn>
+        {attendanceStatus === 'present' ?  presentTime : '' }
+      </AttendanceStatusBtn>
     </>
   );
-};
+}
+
+export const AttendanceTime = () => {
+
+}

@@ -53,7 +53,8 @@ export const AttendanceTableHead = styled.th`
   text-align: center;
   @media (max-width: 600px) {
     width: 100px;
-    padding: 5px;
+    padding: 2px;
+    font-size : 12px;
   }
 `;
 export const AttendanceStatusBtn = styled.td`
@@ -62,6 +63,10 @@ export const AttendanceStatusBtn = styled.td`
   width: 200px;
   text-align: center;
   border-bottom: 1px solid #001f3f;
+  @media (max-width: 600px) {
+    padding: .2em .5em;
+    font-size : 14px;
+  }
 `;
 export const AttendanceRoll = styled.td`
   text-align: left;
@@ -72,8 +77,8 @@ export const AttendanceRoll = styled.td`
   font-size: 18px;
   font-weight: 600;
   @media (max-width: 600px) {
-    width: 100px;
-    padding: 5px;
+    padding: .2em .5em;
+    font-size : 14px;
   }
 `;
 export const AttendanceName = styled.td`
@@ -83,11 +88,11 @@ export const AttendanceName = styled.td`
   padding: 5px 0;
   border-bottom: 1px solid #001f3f;
   font-size: 18px;
-  @media (max-width: 600px) {
-    width: 200px;
-    padding: 5px;
-  }
   font-weight: 600;
+  @media (max-width: 600px) {
+    padding: .2em .5em;
+    font-size : 14px;
+  }
 `;
 // export const StatusButton = styled.input`
 //     /* appearance: none; */
@@ -126,6 +131,10 @@ export const StatusButton = styled.select`
     else if (props.attendanceStatus === "0") return "#ffaa00";
     else return "#000000";
   }};
+  @media (max-width: 600px) {
+    padding: .2em .5em;
+    font-size : 12px;
+  }
 `;
 
 export const AttendanceLable = styled.label`
@@ -136,6 +145,7 @@ export const AttendanceLable = styled.label`
   @media (max-width: 600px) {
     font-size: 14px;
   }
+
 `;
 export const AttendanceDate = styled.input`
   color: #061c41;

@@ -103,7 +103,7 @@ export const AdminSidebar = () => {
                 </Link>
               </ListItem> */}
               <ListItem>
-                <Link to="/admin/veiw-teacher">
+                <Link to="/admin/teacher/list">
                   <Stack
                     direction={"row"}
                     spacing={"5px"}
@@ -114,7 +114,7 @@ export const AdminSidebar = () => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link to="admin/teachers-attendance">
+                <Link to="/admin/teacher/attendace">
                   <Stack
                     direction={"row"}
                     spacing={"5px"}
@@ -196,7 +196,18 @@ export const AdminSidebar = () => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link to="/admin/student-results">
+                <Link to="/admin/student/exams">
+                  <Stack
+                    direction={"row"}
+                    spacing={"5px"}
+                    alignItems={"center"}
+                  >
+                    <p>Exams</p>
+                  </Stack>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/admin/student/results">
                   <Stack
                     direction={"row"}
                     spacing={"5px"}
@@ -207,7 +218,7 @@ export const AdminSidebar = () => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link to="/admin/student-events">
+                <Link to="/admin/student/events">
                   <Stack
                     direction={"row"}
                     spacing={"5px"}
